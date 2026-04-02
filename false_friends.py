@@ -33,11 +33,13 @@ def print_results(false_friends, lang_a, lang_b):
 
 
 if __name__ == "__main__":
-    path_a = input("Path to dictionary A (Turkish): ").strip()
-    path_b = input("Path to dictionary B (Estonian): ").strip()
+    lang_a = input("Language A name: ").strip()
+    path_a = input(f"Path to {lang_a} dictionary: ").strip()
+    lang_b = input("Language B name: ").strip()
+    path_b = input(f"Path to {lang_b} dictionary: ").strip()
 
     dict_a = load_dictionary(path_a)
     dict_b = load_dictionary(path_b)
 
     false_friends = find_false_friends(dict_a, dict_b)
-    print_results(false_friends, "Turkish", "Estonian")
+    print_results(false_friends, lang_a, lang_b)
